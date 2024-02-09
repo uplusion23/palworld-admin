@@ -74,14 +74,16 @@
       [
         "@codedependant/semantic-release-docker",
         {
-          "dockerImage": "thenaji27/palworld-admin"
+          "dockerImage": "thenaji27/palworld-admin",
+          "dockerLogin": false
         }
       ],
       [
         "@codedependant/semantic-release-docker",
         {
-          "dockerImage": "ghcr.io/na-ji/palworld-admin",
-          "dockerRegistry": "ghcr.io"
+          "dockerImage": "na-ji/palworld-admin",
+          "dockerRegistry": "ghcr.io",
+          "dockerLogin": false
         }
       ]
     ],
