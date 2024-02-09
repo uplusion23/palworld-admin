@@ -6,6 +6,7 @@
   "scripts": {
     "build:client": "next build",
     "check": "biome check --no-errors-on-unmatched **/*",
+    "commit": "git-cz",
     "dev:client": "next dev -p 2093",
     "dev:server": "bun run --tsconfig-override tsconfig.server.json --watch server/index.ts",
     "format": "biome format --write **/*",
@@ -19,6 +20,16 @@
   },
   "eslintConfig": {
     "extends": "next/core-web-vitals"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   },
   "dependencies": {
     "@elysiajs/eden": "^0.8.1",
