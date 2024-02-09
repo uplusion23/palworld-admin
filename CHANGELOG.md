@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/na-ji/palworld-admin/compare/v1.0.0...v1.0.1) (2024-02-09)
+
+
+### Bug Fixes
+
+* **docker:** fix files not copied correctly in Docker image ([dbb105c](https://github.com/na-ji/palworld-admin/commit/dbb105c672e09a2e0c93b709f3a295f04c206044))
+
 # 1.0.0 (2024-02-09)
 
 
