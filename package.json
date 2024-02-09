@@ -14,7 +14,7 @@
     "prepare": "husky",
     "release": "semantic-release",
     "start": "concurrently -n client,server \"npm run start:client\" \"npm run start:server\"",
-    "start:client": "next start",
+    "start:client": "next start -p 2093",
     "start:server": "bun run --tsconfig-override tsconfig.server.json server/index.ts"
   },
   "lint-staged": {

@@ -39,5 +39,5 @@ COPY --from=build-client /usr/src/app/*.json .
 
 # run the app
 USER bun
-EXPOSE 3000/tcp
+EXPOSE 2093/tcp
 ENTRYPOINT [ "bun", "run", "start" ]
