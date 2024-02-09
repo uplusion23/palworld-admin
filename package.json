@@ -76,7 +76,8 @@
         {
           "dockerImage": "thenaji27/palworld-admin",
           "dockerLogin": false,
-          "dockerAutoClean": false
+          "dockerAutoClean": false,
+          "dockerBuildQuiet": false
         }
       ],
       [
@@ -85,7 +86,8 @@
           "dockerImage": "na-ji/palworld-admin",
           "dockerRegistry": "ghcr.io",
           "dockerLogin": false,
-          "dockerAutoClean": false
+          "dockerAutoClean": false,
+          "dockerBuildQuiet": false
         }
       ]
     ],
