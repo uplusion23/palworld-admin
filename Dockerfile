@@ -24,8 +24,9 @@ FROM base AS build-client
 COPY . .
 ENV NODE_ENV=production
 COPY --from=install-dev /temp/dev/node_modules node_modules
-RUN bun next telemetry disable
-RUN bun run build:client
+RUN bun next telemetry disable && \
+    apk add npm && \
+    npm run build:client
 
 # copy production dependencies and source code into final image
 FROM base AS release
