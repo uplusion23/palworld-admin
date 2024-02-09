@@ -87,6 +87,9 @@
     ],
     "preset": "angular"
   },
+  "volta": {
+    "node": "20.11.0"
+  },
   "dependencies": {
     "@elysiajs/eden": "^0.8.1",
     "@nextui-org/react": "^2.2.9",
