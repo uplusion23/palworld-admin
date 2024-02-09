@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/na-ji/palworld-admin/compare/v1.0.1...v1.0.2) (2024-02-09)
+
+
+### Bug Fixes
+
+* **docker:** fix wrong port used in docker image ([ca6305f](https://github.com/na-ji/palworld-admin/commit/ca6305f9ed245edc27ea5db9fa33f09f5693ca64))
+
 ## [1.0.1](https://github.com/na-ji/palworld-admin/compare/v1.0.0...v1.0.1) (2024-02-09)
 
 
