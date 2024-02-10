@@ -1,14 +1,23 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import { ReactNode } from 'react';
-
-import './globals.css';
-import { Providers } from './Providers';
-import { Header } from './Header';
+import { Inter as FontSans, Space_Mono } from 'next/font/google';
+import Navigation from '@/components/navigation/navigation';
+import { InitialServerStatusSetter } from '@/providers/server-status-provider';
 import { getServerStatus } from '../client';
-import { InitialServerStatusSetter } from './ServerStatusProvider';
+import { Providers } from './Providers';
+import './globals.css';
+import { cn } from '@/lib/utils';
 
-const inter = Inter({ subsets: ['latin'] });
+export const fontSans = FontSans({
+  subsets: ['latin'],
+  variable: '--font-sans',
+});
+
+export const fontMono = Space_Mono({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-mono',
+});
 
 export const metadata: Metadata = {
   title: 'Palworld Admin',
@@ -25,13 +34,20 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
-      <body className={`min-h-screen bg-background font-sans antialiased ${inter.className}`}>
+      <body
+        className={cn(
+          'm-0 flex h-full min-h-screen w-full flex-col overflow-y-auto overflow-x-hidden bg-background p-0 pt-32 font-sans antialiased',
+          fontSans.variable,
+        )}
+      >
         <Providers>
-          <InitialServerStatusSetter initialServerStatus={initialServerStatus} />
-          <div className="relative flex flex-col">
-            <Header />
-            <main className="px-6 flex gap-4 flex-col pb-16 flex-grow">{children}</main>
-          </div>
+          <InitialServerStatusSetter
+            initialServerStatus={initialServerStatus}
+          />
+          <Navigation />
+          <main className="mx-auto flex h-full w-full max-w-screen-sm grow flex-col sm:px-8 lg:max-w-screen-2xl">
+            {children}
+          </main>
         </Providers>
       </body>
     </html>

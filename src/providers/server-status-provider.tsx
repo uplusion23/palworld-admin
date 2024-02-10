@@ -1,6 +1,12 @@
 'use client';
 import { FC, useEffect } from 'react';
-import { atom, AtomGetters, injectAtomGetters, injectEffect, injectStore } from '@zedux/atoms';
+import {
+  atom,
+  AtomGetters,
+  injectAtomGetters,
+  injectEffect,
+  injectStore,
+} from '@zedux/atoms';
 
 import type { ServerStatus } from '../../server/types';
 import { getServerStatus } from '../client';
@@ -47,12 +53,14 @@ const serverStatusAtom = atom('serverStatus', () => {
   return store;
 });
 
-export const selectOnlinePlayerCount = ({ get }: AtomGetters) => get(serverStatusAtom).onlinePlayers;
-export const selectPlayerList = ({ get }: AtomGetters) => get(serverStatusAtom).players;
+export const selectOnlinePlayerCount = ({ get }: AtomGetters) =>
+  get(serverStatusAtom).onlinePlayers;
+export const selectPlayerList = ({ get }: AtomGetters) =>
+  get(serverStatusAtom).players;
 
-export const InitialServerStatusSetter: FC<{ initialServerStatus: ServerStatus | null }> = ({
-  initialServerStatus,
-}) => {
+export const InitialServerStatusSetter: FC<{
+  initialServerStatus: ServerStatus | null;
+}> = ({ initialServerStatus }) => {
   const serverStatusInstance = useAtomInstance(serverStatusAtom);
 
   useEffect(() => {

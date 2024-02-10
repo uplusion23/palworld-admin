@@ -1,10 +1,10 @@
-import { PlayerTable } from './PlayerTable';
+import { PlayerTable } from '@/components/player-table/player-table';
 
 export default function Home() {
   return (
-    <>
-      <h2 className="text-4xl">Player List</h2>
+    <div className="flex flex-col gap-6">
+      <h2 className="font-mono text-2xl text-muted-foreground">Players</h2>
       <PlayerTable />
-    </>
+    </div>
   );
 }
